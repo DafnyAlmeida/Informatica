@@ -1,3 +1,33 @@
+#1 questão
+for n in range(1,11):
+    print(n)
+
+#2 questao
+n=10
+while n != 0:
+    print(n)
+    n -=1
+
+#3 questao
+nome = input("qual o seu nome")
+for n in range(5):
+    print(nome)
+
+#4 questao
+for n in range(0, 21,2):
+    print(n)
+
+#5 questao
+senha = 1234
+while True:
+    senha1 = int(input("Digite a senha: "))
+    if senha1 == senha:
+        print("Senha correta: ")
+        break
+    else:
+        print("Senha incorreta: ")
+        continue
+
 #Questão 6
 pedirN = 1
 soma = 0
