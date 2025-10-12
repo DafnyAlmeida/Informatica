@@ -62,11 +62,11 @@
 # print(f"Dos número digitado {pares} são pares e {impares} são ímpares")
 
 # # Questão 15 – Sequência de Fibonacci
-# def fibonacci(n):
-#     a, b = 0, 1 # O a é 0 e o b é 1
-#     resultado = []
-#     while len(resultado) < n:
-#         resultado.append(a)
-#         a, b = b, b + a # aqui o a passa a ser 1 e o b passa a ser 1
-#     print(f"A sequecia de Fibonacci até esse número é {resultado}")
-# fibonacci(20)
+def fibonacci(n):
+    a, b = 0, 1 # O a é 0 e o b é 1
+    resultado = []
+    while len(resultado) < n:
+        resultado.append(a)
+        a, b = b, b + a # aqui o a passa a ser 1 e o b passa a ser 1
+    print(f"A sequecia de Fibonacci até esse número é {resultado}")
+fibonacci(20)

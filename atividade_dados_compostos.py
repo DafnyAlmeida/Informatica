@@ -25,7 +25,7 @@
 # media(lista)
 
 
-# Questão 03 - Busca em lista
+# # Questão 03 - Busca em lista 
 # lista = []
 # for i in range(0, 6):
 #     n = int(input("Digite um número: "))
@@ -42,7 +42,6 @@
 #     print("Programa encerrado")
 
 
-
 # # Questão 04
 # lista = []
 # lista_pares = []
@@ -57,8 +56,7 @@
 # print(f"A lista tem os seguintes itens: {lista} sendo os pares os seguintes: {lista_pares}")
 
 
-
-# Questão 05
+# # Questão 05
 # lista = []
 # for i in range(8):
 #     n = int(input("Digite um número: "))
@@ -69,8 +67,7 @@
 # print(f"A média dos números é: {sum(lista)/8}")
 
 
-
-# Questão 06
+# # Questão 06
 # lista = []
 # for i in range(10):
 #     n = int(input("Digite um número: "))
@@ -88,8 +85,7 @@
 #     print("Programa encerrado")
 
 
-
-# Questão 07
+# # Questão 07
 # lista = []
 # for i in range(5):
 #     n = input("Digite o nome do convidado: ")
@@ -109,7 +105,6 @@
 #     print("Programa encerrado")
 
 
-
 # # Questão 08
 # lista = []
 # acima = []
@@ -120,7 +115,6 @@
 #     if n >= 6:
 #         acima.append(n)
 # print(f"A media dos números é {media} e os seguintes números estão acima da média {acima}")
-
 
 
 # # Questão 09
