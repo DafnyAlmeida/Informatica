@@ -1,13 +1,13 @@
-# # Questão 01 - Cadastro de nomes
-# lista = []
-# cont = 0
-# for i in range(0, 5):
-#     n = input("Digite um nome: ").lower()
-#     lista.append(n)
-# for nome in lista:
-#     if nome[0] == "a":
-#         cont += 1
-# print(f"A lista é a seguinte: {lista} e {cont} nomes começam com 'a'")
+# Questão 01 - Cadastro de nomes
+lista = []
+cont = 0
+for i in range(0, 5):
+    n = input("Digite um nome: ").lower()
+    lista.append(n)
+for nome in lista:
+    if nome[0] == "a":
+        cont += 1
+print(f"A lista é a seguinte: {lista} e {cont} nomes começam com 'a'")
 
 
 
