@@ -38,11 +38,10 @@ def adicionar_pedido(cardapio, pedidos):
     print("Pedido adicionado com sucesso!")
     
 def exibir_pedido(pedidos):
-    for i in pedidos:
-        total += i["Preço"]
+    total = sum(item["Preço"] for item in pedidos)
     tabela = [[item["Id"], item["Nome"], item["Preço"]] for item in pedidos]
-    print(tabulate(tabela, headers=["Id", "Nome", "Preço", "Total"], tablefmt="fancy_grid"))
-    print("total")
+    tabela.append(["", "Total", total])
+    print(tabulate(tabela, headers=["Id", "Nome", "Preço"], tablefmt="fancy_grid"))
     
 def remover_item(pedidos):
     id_remover = int(input("Digite o id do item que deseja remover: "))
