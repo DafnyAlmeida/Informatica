@@ -1,41 +1,32 @@
 from tabulate import tabulate
-def carregar_cardapio(cardapio):
-    id = int(input("Digite o id do cardapio: "))
-    nome = input("Digite o nome do item: ")
-    preco = float(input("Digite o preço do item: "))
-    
-    item = {
-        "Id": id, 
-        "Nome": nome, 
-        "Preço": preco
-    }
-    
-    cardapio.append(item)
-    print("Item adicionado com sucesso!")
+
 
 def exibir_cardapio(cardapio):
-    tabela = [[item["Id"], item["Nome"], item["Preço"]] for item in cardapio]
-    print(tabulate(tabela, headers=["Id", "Nome", "Preço"], tablefmt="fancy_grid"))
+    if not cardapio:
+        print("Cardapio não estabelecido")
+    else:
+        tabela = [[item["Id"], item["Nome"], item["Preço"]] for item in cardapio]
+        print(tabulate(tabela, headers=["Id", "Nome", "Preço"], tablefmt="fancy_grid"))
     
 def adicionar_pedido(cardapio, pedidos):
     pedido_nome = input("Digite o nome da pedido: ").strip().lower()
+    encontrado = False
     for i in cardapio:
-        if pedido_nome in i["Nome"]:
+        if pedido_nome in i["Nome"].strip().lower():
             quantida = int(input("Digite a quantidade: "))
-            id = i["Id"]
             preco = i["Preço"] * quantida
-        else:
+            pedido = {
+                "Nome": i["Nome"],
+                "Id": i["Id"],
+                "Quant": quantida,
+                "Preço": preco
+            }
+            pedidos.append(pedido)
+            print("Pedido adicionado com sucesso!")
+            encontrado = True
+            break
+        if not encontrado:
             print("O item não esta no cardapio")
-        
-    pedido = {
-        "Nome": pedido_nome,
-        "Id": id,
-        "Quant": quantida,
-        "Preço": preco
-    }
-    
-    pedidos.append(pedido)
-    print("Pedido adicionado com sucesso!")
     
 def exibir_pedido(pedidos):
     total = sum(item["Preço"] for item in pedidos)
@@ -44,9 +35,25 @@ def exibir_pedido(pedidos):
     print(tabulate(tabela, headers=["Id", "Nome", "Preço"], tablefmt="fancy_grid"))
     
 def remover_item(pedidos):
-    id_remover = int(input("Digite o id do item que deseja remover: "))
-    for i in pedidos:
-        if id_remover == i["Id"]:
-            pedidos.remove(i)
-    print("Item removido com sucesso!")
+    tipo = (input("Deseja remover tudo ou por quantidade: (tudo/quantidade)")).lower().strip()
+    
+    match tipo:
+        case "tudo":
+            nome_remover = input("Digite o item que deseja remover: ").lower().strip()
+            for i in pedidos:
+                if nome_remover == i["Nome"]:
+                    pedidos.remove(i)
+            print("Item removido com sucesso!")
+            
+        case "quantidade":
+            nome_remover = input("Digite o item que deseja remover: ").lower().strip()
+            quant_remover = int(input("Digite a quantidade certa: "))
+            for i in pedidos:
+                if nome_remover == i["Nome"]:
+                    i["Quant"] = quant_remover
+                    print("Quantidade ajustada com sucesso!")
+            
+        case _:
+            print("Valor inválido, tente novamente")
+    
 
